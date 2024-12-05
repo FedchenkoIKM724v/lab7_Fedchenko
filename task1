@@ -1,0 +1,28 @@
+#include <iostream>
+int main() {
+	int num, fdig, ldig, num1;
+	std::cout << "Enter your number: \n";
+	std::cin >> num;
+	int i = num;
+	int num2 = num;
+	for ( int j = 1 ; j >= 1 ; j -= 2) {
+		for ( ; i > 0; j++) {
+			i /= 10;
+		}
+		fdig = num % 10;
+		ldig = num / pow(10, j - 2);
+		num /= 10;
+		num1 = num / pow(10, j - 3);
+		num1 *= pow(10, j - 3);
+		num -= num1;
+		if (fdig != ldig) {
+			std::cout << "Number " << num2 << " is not a palindrom";
+			break;
+		}
+		if (num == 0) {
+			std::cout << "Number " << num2 << " is a palindrom";
+			break;
+		}
+			
+	}
+}
